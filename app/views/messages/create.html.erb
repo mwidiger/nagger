@@ -1,0 +1,17 @@
+<%= form_with url: messages_path, method: :post, data: { turbo: false } do |form| %>
+  <%= form.hidden_field :account_sid, value: @message.account_sid %>
+  <%= form.hidden_field :auth_token, value: @message.auth_token %>
+
+  <%= form.label :from_number, "Enter Phone Number Message is from:" %>
+  <%= form.text_field :from_number, value: @message.from_number %>
+  <%= form.label :to_number, "Enter Phone Number to send to:" %>
+  <%= form.text_field :to_number, value: @message.to_number %>
+
+  <%= form.label :message_text, "Enter text of message:" %>
+  <%= form.text_area :message_text %>
+
+  <%= form.submit "Submit" %>
+<% end %>
+
+<br><br>
+<%= @message.inspect %>
