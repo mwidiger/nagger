@@ -13,5 +13,7 @@
   <%= form.submit "Submit" %>
 <% end %>
 
-<br><br>
-<%= @message.inspect %>
+<% if Rails.env == "development" %>
+  <br><br>
+  <%= @message.inspect %>
+<% end %>
